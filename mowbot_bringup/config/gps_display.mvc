@@ -1,0 +1,81 @@
+capture_directory: "~"
+fixed_frame: map
+target_frame: map
+fix_orientation: false
+rotate_90: false
+enable_antialiasing: true
+show_displays: true
+show_status_bar: true
+show_capture_tools: true
+window_width: 1854
+window_height: 1011
+view_scale: 0.0496740974
+offset_x: -17.5711212
+offset_y: -3.41403675
+use_latest_transforms: true
+background: "#a0a0a4"
+image_transport: raw
+displays:
+  - type: mapviz_plugins/tile_map
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      custom_sources:
+        []
+      bing_api_key: AkCDUXwYzM3w36XYcNeT0kNOFhpTiQuwluXkQlFBs1WhFbknP2_2iDBXeL_WzXCc
+      source: Bing Maps (terrain)
+  - type: mapviz_plugins/tf_frame
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      frame: base_link
+      color: "#00ff00"
+      draw_style: arrows
+      position_tolerance: 0
+      buffer_size: 1
+      static_arrow_sizes: true
+      arrow_size: 72
+  - type: mapviz_plugins/navsat
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      topic: /ublox_gpsr_node/fix
+      color: "#00ff00"
+      draw_style: points
+      position_tolerance: 0
+      buffer_size: 1
+      qos_depth: 10
+      qos_history: 1
+      qos_reliability: 1
+      qos_durability: 2
+  - type: mapviz_plugins/navsat
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      topic: /ublox_gpsl_node/fix
+      color: "#00aaff"
+      draw_style: points
+      position_tolerance: 0
+      buffer_size: 1
+      qos_depth: 10
+      qos_history: 1
+      qos_reliability: 1
+      qos_durability: 2
+  - type: mapviz_plugins/navsat
+    name: new display
+    config:
+      visible: true
+      collapsed: false
+      topic: /combined_gps/fix
+      color: "#ff0000"
+      draw_style: points
+      position_tolerance: 0
+      buffer_size: 1
+      qos_depth: 10
+      qos_history: 1
+      qos_reliability: 1
+      qos_durability: 2

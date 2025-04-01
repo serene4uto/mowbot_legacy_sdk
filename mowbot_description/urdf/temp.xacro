@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<!-- mowbot.urdf.xacro -->
+
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="mowbot">
+
+  <!-- Include the base Xacro file using pkg_prefix -->
+  <xacro:include filename="$(find mowbot_description)/urdf/mowbot_base.urdf.xacro" />
+
+  <!-- Define additional components here if needed -->
+
+</robot>

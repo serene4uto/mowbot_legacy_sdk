@@ -1,0 +1,4 @@
+ktserver_client:
+  ros__parameters:
+    robot_serial: "RSN800-0000"
+    

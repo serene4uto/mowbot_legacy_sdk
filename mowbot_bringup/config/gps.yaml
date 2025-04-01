@@ -1,0 +1,128 @@
+/**:
+  ublox_gpsl_node:
+    ros__parameters:
+      config_on_startup: true
+      debug: 4                    # Range 0-4 (0 means no debug statements will print)
+      device: /dev/UBLOX-GNSS-L
+      frame_id: gps_left_link
+      uart1:
+        baudrate: 115200
+      
+      gnss:
+        galileo: true
+        gps: true
+        glonass: true             
+        beidou: true             
+        qzss: true              
+
+      dynamic_model: portable    # Dynamic Platform Model
+      rate: 17.0
+      nav_rate: 1
+      fix_mode: auto
+      dr_limit: 0
+      # TMODE3 Config
+      tmode3: 0                   # Survey-In Mode
+      sv_in:
+        reset: false              # True: disables and re-enables survey-in (resets)
+                                  # False: Disables survey-in only if TMODE3 is
+                                  # disabled
+        min_dur: 300              # Survey-In Minimum Duration [s]
+        acc_lim: 3.0              # Survey-In Accuracy Limit [m]
+      
+      dgnss_mode: 3               # Fixed mode
+      
+
+      inf:
+        all: true                   # Whether to display all INF messages in console
+
+      publish:
+        all: false
+
+/**:
+  ublox_gpsr_node:
+    ros__parameters:
+      config_on_startup: true
+      debug: 4                    # Range 0-4 (0 means no debug statements will print)
+      device: /dev/UBLOX-GNSS-R
+      frame_id: gps_right_link
+      uart1:
+        baudrate: 115200
+      
+      gnss:
+        galileo: true
+        gps: true
+        glonass: true             
+        beidou: true             
+        qzss: true              
+
+      dynamic_model: portable    # Dynamic Platform Model
+      rate: 17.0
+      nav_rate: 1
+      fix_mode: auto
+      # TMODE3 Config
+      tmode3: 0                   # Survey-In Mode
+      sv_in:
+        reset: false              # True: disables and re-enables survey-in (resets)
+                                  # False: Disables survey-in only if TMODE3 is
+                                  # disabled
+        min_dur: 300              # Survey-In Minimum Duration [s]
+        acc_lim: 3.0              # Survey-In Accuracy Limit [m]
+      
+      dgnss_mode: 3               # Fixed mode
+
+      inf:
+        all: true                   # Whether to display all INF messages in console
+
+      publish:
+        all: false
+
+
+/**:
+  ntrip_client:
+    ros__parameters:
+      # Required parameters used to connect to the NTRIP server
+      # host: www.gnssdata.or.kr
+      # port: 2101
+      # mountpoint: KUNW-RTCM32
+
+      host: rtk2go.com
+      port: 2101
+      mountpoint: serene4uto-rtk-bs
+
+      # host: ntrip.hi-rtk.io
+      # port: 2101
+      # mountpoint: SNS_AUTO
+
+      # Optional parameter that will set the NTRIP version in the initial HTTP request to the NTRIP caster.
+      ntrip_version: None
+      # The rate at which the NTRIP server will send RTCM messages. This will be the rate at which the node will request RTCM messages
+      ntrip_server_hz: 1.0 # max to 1.0 Hz for rtk2go
+      # If this is set to true, we will read the username and password and attempt to authenticate. If not, we will attempt to connect unauthenticated
+      authenticate: True
+      # If authenticate is set the true, we will use these to authenticate with the server
+
+      username: kde1054@naver.com
+      password: gnss
+
+      # username: sns
+      # password: "1234"
+      
+      # Whether to connect with SSL. cert, key, and ca_cert options will only take effect if this is true
+      ssl: false
+      # If the NTRIP caster uses cert based authentication, you can specify the cert and keys to use with these options
+      cert: None
+      key: None
+      # If the NTRIP caster uses self signed certs, or you need to use a different CA chain, specify the path to the file here
+      ca_cert: None
+      # Not sure if this will be looked at by other nodes, but this frame ID will be added to the RTCM messages published by this node
+      rtcm_frame_id: 'rtcm'
+      # Optional parameters that will allow for longer or shorter NMEA messages. Standard max length for NMEA is 82
+      nmea_max_length: 82
+      nmea_min_length: 3
+      # Use this parameter to change the type of RTCM message published by the node. Defaults to "mavros_msgs", but we also support "rtcm_msgs"
+      rtcm_message_package: 'rtcm_msgs'
+      # Will affect how many times the node will attempt to reconnect before exiting, and how long it will wait in between attempts when a reconnect occurs
+      reconnect_attempt_max: 10
+      reconnect_attempt_wait_seconds: 5
+      # How many seconds is acceptable in between receiving RTCM. If RTCM is not received for this duration, the node will attempt to reconnect
+      rtcm_timeout_seconds: 10
