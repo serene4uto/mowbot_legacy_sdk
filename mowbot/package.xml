@@ -26,8 +26,14 @@
   <depend>imu_filter_madgwick</depend>
   <depend>foxglove_bridge</depend>
   <depend>robot_localization</depend>
+  <depend>joint_state_publisher</depend>
+  <depend>joint_state_publisher_gui</depend>
+  <depend>robot_state_publisher</depend>
+  <depend>rviz2</depend>
+  <depend>xacro</depend>
+  <depend>navigation2</depend>
+  <depend>nav2_bringup</depend>
 
-  
 
   <export>
     <build_type>ament_cmake</build_type>
