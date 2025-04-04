@@ -2,6 +2,7 @@
   witmotion:
     ros__parameters:
       port: /dev/HWT905
+      # baud_rate: 9600 # baud
       baud_rate: 9600 # baud
       polling_interval: 5 # ms
       timeout_ms: 150 # ms
