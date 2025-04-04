@@ -85,13 +85,13 @@
       # port: 2101
       # mountpoint: KUNW-RTCM32
 
-      host: rtk2go.com
-      port: 2101
-      mountpoint: serene4uto-rtk-bs
-
-      # host: ntrip.hi-rtk.io
+      # host: rtk2go.com
       # port: 2101
-      # mountpoint: SNS_AUTO
+      # mountpoint: serene4uto-rtk-bs
+
+      host: ntrip.hi-rtk.io
+      port: 2101
+      mountpoint: SNS_AUTO
 
       # Optional parameter that will set the NTRIP version in the initial HTTP request to the NTRIP caster.
       ntrip_version: None
@@ -101,11 +101,11 @@
       authenticate: True
       # If authenticate is set the true, we will use these to authenticate with the server
 
-      username: kde1054@naver.com
-      password: gnss
+      # username: kde1054@naver.com
+      # password: gnss
 
-      # username: sns
-      # password: "1234"
+      username: sns
+      password: "1234"
       
       # Whether to connect with SSL. cert, key, and ca_cert options will only take effect if this is true
       ssl: false
@@ -117,7 +117,7 @@
       # Not sure if this will be looked at by other nodes, but this frame ID will be added to the RTCM messages published by this node
       rtcm_frame_id: 'rtcm'
       # Optional parameters that will allow for longer or shorter NMEA messages. Standard max length for NMEA is 82
-      nmea_max_length: 82
+      nmea_max_length: 200
       nmea_min_length: 3
       # Use this parameter to change the type of RTCM message published by the node. Defaults to "mavros_msgs", but we also support "rtcm_msgs"
       rtcm_message_package: 'rtcm_msgs'
