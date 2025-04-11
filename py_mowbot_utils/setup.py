@@ -28,7 +28,9 @@ setup(
             '2d_slam_map_saver = py_mowbot_utils.2d_slam_map_saver:main',
             'nav_no_map_wp_follower = py_mowbot_utils.nav_no_map_wp_follower:main',
             'system_monitor = py_mowbot_utils.system_monitor:main',
+            'system_monitor_2 = py_mowbot_utils.system_monitor_2:main',
             'sensor_monitor = py_mowbot_utils.sensor_monitor:main',
+            'sensor_monitor_2 = py_mowbot_utils.sensor_monitor_2:main',
             
             'ktserver_client = ktserver_demo.ktserver_client:main',
             
