@@ -34,6 +34,7 @@ setup(
             
             'ktserver_client = ktserver_demo.ktserver_client:main',
             
+            'gui_gps_waypoint_follower = gui_adapter.gui_gps_waypoint_follower:main',
         ],
     },
 )
